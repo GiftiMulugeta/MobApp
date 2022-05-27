@@ -49,6 +49,7 @@ class App extends StatelessWidget{
         height: 250,
         child:
       Column(
+        mainAxisAlignment:MainAxisAlignment.center,
         crossAxisAlignment:CrossAxisAlignment.center,
         children:[
           Padding(padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
@@ -86,15 +87,19 @@ class MainScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(appBar: AppBar(title: Text("")),
-    body: Container(color:Colors.blue[50],child: Stack(  
+    body: Container(
+     
+      color:Colors.blue[50],child: Stack(  
               children:[
                 Positioned(
                   child:          InkWell(
-    onTap: () =>context.go('/profiles'),
+    onTap: () =>context.go('/profiles',
     child: Container(child:Text("Profiles"),color: Colors.green[100],),
 ),),
 Positioned(child:                
 InkWell(
+   width:100,
+      height:100
     onTap: () =>context.go('/attendance'),
     child: Container(child:Text("Attendance"),color: Colors.green[200],),
 ),),
